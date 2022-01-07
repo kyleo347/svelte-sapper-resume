@@ -14,6 +14,11 @@
       <p>Fullstack Developer</p>
     </div>
   </Card>
+  <Card variant="outlined" padded style="display:flex;flex-direction:row">
+    <div>
+      <h2>Skills</h2>
+    </div>
+  </Card>
 </div>
 
 <style>
