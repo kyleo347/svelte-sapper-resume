@@ -1,7 +1,16 @@
 <svelte:head>
-	<title>About</title>
+  <title>About</title>
 </svelte:head>
 
 <h1>About this site</h1>
 
-<p>This is the 'about' page. There's not much here.</p>
+<p>
+  This site was written using the below technologies, and deployed using
+  jamstack on AWS.
+</p>
+<ul>
+  <li>Svelte</li>
+  <li>Sapper</li>
+  <li>Material UI</li>
+  <li>Netlify CMS</li>
+</ul>
