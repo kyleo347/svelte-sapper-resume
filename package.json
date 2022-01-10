@@ -15,10 +15,10 @@
   "dependencies": {
     "compression": "^1.7.1",
     "express": "^4.17.2",
+    "sirv": "^1.0.0",
     "front-matter": "^4.0.2",
     "glob": "^7.2.0",
-    "mz": "^2.7.0",
-    "sirv": "^1.0.0"
+    "mz": "^2.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -36,6 +36,7 @@
     "@smui/card": "^6.0.0-beta.13",
     "@smui/drawer": "^6.0.0-beta.13",
     "@smui/icon-button": "^6.0.0-beta.13",
+    "@smui/layout-grid": "^6.0.0-beta.13",
     "@smui/list": "^6.0.0-beta.13",
     "@smui/top-app-bar": "^6.0.0-beta.13",
     "@tsconfig/svelte": "^1.0.10",

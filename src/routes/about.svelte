@@ -6,7 +6,7 @@
 
 <p>
   This site was written using the below technologies, and deployed using
-  jamstack on AWS.
+  jamstack on Netlify.
 </p>
 <ul>
   <li>Svelte</li>

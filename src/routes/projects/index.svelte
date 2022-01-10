@@ -1,31 +1,15 @@
 <script context="module" lang="ts">
+  import { preloadProjects } from "./_api";
+
   export function preload() {
-    return this.fetch(`projects.json`)
-      .then((r: { json: () => any }) => r.json())
-      .then(
-        (
-          projects: {
-            slug: string;
-            title: string;
-            image: string;
-            github: string;
-            demo: string;
-          }[]
-        ) => {
-          return { projects };
-        }
-      );
+    return preloadProjects(this.fetch);
   }
 </script>
 
 <script lang="ts">
-  export let projects: {
-    slug: string;
-    title: string;
-    image: string;
-    github: string;
-    demo: string;
-  }[];
+  import type { Project } from "../../models/projects";
+
+  export let projects: Project[];
 </script>
 
 <svelte:head>
