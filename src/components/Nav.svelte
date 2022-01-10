@@ -31,12 +31,12 @@
       <IconButton
         class="material-icons"
         aria-label="Bookmark this page"
-        href="blog">person</IconButton
+        href="contact">person</IconButton
       >
       <IconButton
         class="material-icons"
         aria-label="Bookmark this page"
-        href="blog">toc</IconButton
+        href="projects">toc</IconButton
       >
     </Section>
   </Row>
