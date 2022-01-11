@@ -1,8 +1,10 @@
 <script context="module" lang="ts">
-  import { preloadProjects } from "./projects/_api";
+  import { preloadProfile, preloadProjects } from "./projects/_api";
 
   export function preload() {
-    return preloadProjects(this.fetch);
+    const projects = preloadProjects(this.fetch);
+    const profiles = preloadProfile(this.fetch);
+    return { projects, profile: profiles[0] };
   }
 </script>
 
@@ -17,26 +19,27 @@
   import Button, { Label } from "@smui/button";
   import LayoutGrid, { Cell } from "@smui/layout-grid";
   import type { Project } from "../models/projects";
+  import type { Profile } from "../models/profile";
 
   export let projects: Project[];
-  let skills: string[];
+  export let profile: Profile;
 </script>
 
 <svelte:head>
-  <title>Kyle O'Connor</title>
+  <title>{profile.title}</title>
 </svelte:head>
 <div>
   <Card variant="outlined" padded style="display:flex;flex-direction:row">
     <img alt="Kyle" src="hammahamma.jpg" />
     <div>
-      <h2>Kyle O'Connor</h2>
+      <h2>{profile.title}</h2>
       <p>Fullstack Developer</p>
     </div>
   </Card>
   <Card variant="outlined" style="display:flex;flex-direction:row">
     <h2>Skills</h2>
     <LayoutGrid>
-      {#each skills as skill}
+      {#each profile.skills as skill}
         <Button variant="outlined">{skill}</Button>
       {/each}
     </LayoutGrid>
