@@ -1,4 +1,5 @@
 ---
 skill:
   - Typescript
+  - javascript
 ---
