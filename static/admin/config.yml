@@ -17,9 +17,8 @@ collections:
       - { label: "Demo", name: "demo", widget: "string", required: false }
   - name: "profile" # Used in routes, e.g., /admin/collections/skill
     label: "Profile" # Used in the UI
-    folder: "static/_profile" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., title.md
+    file: "static/profile.yml" # The path to the folder where the documents are stored
+    identifier-field: name
     fields: # The fields for each document, usually in front matter
-      - { label: "Profile", name: "Title", widget: "string" }
+      - { label: "Name", name: "name", widget: "string" }
       - { label: "Skills", name: "skills", widget: "list" }
