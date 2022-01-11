@@ -16,3 +16,9 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Github", name: "github", widget: "string", required: false }
       - { label: "Demo", name: "demo", widget: "string", required: false }
+  - name: "skills" # Used in routes, e.g., /admin/collections/skill
+    label: "Skills" # Used in the UI
+    folder: "static/_data" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Skill", name: "skill", widget: "list" }

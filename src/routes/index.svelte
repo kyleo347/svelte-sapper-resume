@@ -19,6 +19,7 @@
   import type { Project } from "../models/projects";
 
   export let projects: Project[];
+  let skills: string[];
 </script>
 
 <svelte:head>
@@ -32,12 +33,15 @@
       <p>Fullstack Developer</p>
     </div>
   </Card>
-  <Card variant="outlined" padded style="display:flex;flex-direction:row">
-    <div>
-      <h2>Skills</h2>
-    </div>
+  <Card variant="outlined" style="display:flex;flex-direction:row">
+    <h2>Skills</h2>
+    <LayoutGrid>
+      {#each skills as skill}
+        <Button variant="outlined">{skill}</Button>
+      {/each}
+    </LayoutGrid>
   </Card>
-  <Card variant="outlined" padded>
+  <Card variant="outlined">
     <h2>Projects</h2>
     <LayoutGrid>
       {#each projects as project}
