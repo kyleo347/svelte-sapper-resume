@@ -43,9 +43,13 @@
       {#each projects as project}
         <Cell>
           <div class="card-container">
-            <Card>
+            <Card class="card">
               <PrimaryAction on:click={() => null}>
-                <Media class="card-media-16x9" aspectRatio="16x9" />
+                <Media
+                  class="card-media-16x9"
+                  aspectRatio="16x9"
+                  style="--background-image: url('{project.image}')"
+                />
                 <Content class="mdc-typography--body2">
                   <h2 class="mdc-typography--headline6" style="margin: 0;">
                     {project.title}
@@ -54,10 +58,10 @@
               </PrimaryAction>
               <Actions>
                 <ActionButtons>
-                  <Button on:click={() => null}>
+                  <Button href={project.github} target="_blank">
                     <Label>github</Label>
                   </Button>
-                  <Button on:click={() => null}>
+                  <Button href={project.demo} target="_blank">
                     <Label>demo</Label>
                   </Button>
                 </ActionButtons>
@@ -80,10 +84,10 @@
   }
 
   * :global(.card-media-16x9) {
-    background-image: url("/hammahamma.jpg");
+    background-image: var(--background-image);
   }
-  .card {
-    display: flex;
-    flex-direction: row;
+
+  * :global(.card) {
+    min-width: 250px;
   }
 </style>
