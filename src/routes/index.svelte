@@ -2,9 +2,10 @@
   import { preloadProfile, preloadProjects } from "./projects/_api";
 
   export function preload() {
-    const projects = preloadProjects(this.fetch);
-    const profiles = preloadProfile(this.fetch);
-    return { projects, profile: profiles[0] };
+    return preloadProjects(this.fetch);
+    // const projects = preloadProjects(this.fetch);
+    // const profiles = preloadProfile(this.fetch);
+    // return { projects, profile: profiles[0] };
   }
 </script>
 
@@ -25,7 +26,7 @@
   export let profile: Profile;
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
   <title>{profile.title}</title>
 </svelte:head>
 <div>
@@ -35,52 +36,52 @@
       <h2>{profile.title}</h2>
       <p>Fullstack Developer</p>
     </div>
-  </Card>
-  <Card variant="outlined" style="display:flex;flex-direction:row">
-    <h2>Skills</h2>
-    <LayoutGrid>
-      {#each profile.skills as skill}
-        <Button variant="outlined">{skill}</Button>
-      {/each}
-    </LayoutGrid>
-  </Card>
-  <Card variant="outlined">
-    <h2>Projects</h2>
-    <LayoutGrid>
-      {#each projects as project}
-        <Cell>
-          <div class="card-container">
-            <Card class="card">
-              <PrimaryAction on:click={() => null}>
-                <Media
-                  class="card-media-16x9"
-                  aspectRatio="16x9"
-                  style="--background-image: url('{project.image}')"
-                />
-                <Content class="mdc-typography--body2">
-                  <h2 class="mdc-typography--headline6" style="margin: 0;">
-                    {project.title}
-                  </h2>
-                </Content>
-              </PrimaryAction>
-              <Actions>
-                <ActionButtons>
-                  <Button href={project.github} target="_blank">
-                    <Label>github</Label>
-                  </Button>
-                  <Button href={project.demo} target="_blank">
-                    <Label>demo</Label>
-                  </Button>
-                </ActionButtons>
-              </Actions>
-            </Card>
-          </div>
-        </Cell>
-      {/each}
-    </LayoutGrid>
-  </Card>
-</div>
+  </Card> -->
+<Card variant="outlined" style="display:flex;flex-direction:row">
+  <h2>Skills</h2>
+  <LayoutGrid>
+    <!-- {#each profile.skills as skill}
+      <Button variant="outlined">{skill}</Button>
+    {/each} -->
+  </LayoutGrid>
+</Card>
+<Card variant="outlined">
+  <h2>Projects</h2>
+  <LayoutGrid>
+    {#each projects as project}
+      <Cell>
+        <div class="card-container">
+          <Card class="card">
+            <PrimaryAction on:click={() => null}>
+              <Media
+                class="card-media-16x9"
+                aspectRatio="16x9"
+                style="--background-image: url('{project.image}')"
+              />
+              <Content class="mdc-typography--body2">
+                <h2 class="mdc-typography--headline6" style="margin: 0;">
+                  {project.title}
+                </h2>
+              </Content>
+            </PrimaryAction>
+            <Actions>
+              <ActionButtons>
+                <Button href={project.github} target="_blank">
+                  <Label>github</Label>
+                </Button>
+                <Button href={project.demo} target="_blank">
+                  <Label>demo</Label>
+                </Button>
+              </ActionButtons>
+            </Actions>
+          </Card>
+        </div>
+      </Cell>
+    {/each}
+  </LayoutGrid>
+</Card>
 
+<!-- </div> -->
 <style>
   img {
     width: 100px;
